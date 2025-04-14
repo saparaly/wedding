@@ -19,9 +19,11 @@ export default function ProgramTimeline() {
   return (
     <>
     <div className='h-[740px]'>
-      <img src="https://optim.tildacdn.pro/tild3966-6136-4134-b965-336563616336/-/resize/922x/-/format/webp/d77add98a76bf550a95b.jpg"></img>
-      <div className="absolute top-[302px] left-0 w-full h-[100px] bg-gradient-to-b from-transparent to-white" />
-
+      <img src="./main.jpg"></img>
+      <div
+    className="absolute top-[243px] left-0 w-full h-[135px]
+               bg-gradient-to-b from-transparent via-[#fbfafb]/40 to-[#fbfafb]"
+  />
       <div className='absolute top-[400px] left-0'>
         <img src="./salogo.png" alt="" />
       </div>

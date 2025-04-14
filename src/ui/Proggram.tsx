@@ -26,7 +26,7 @@ export const Program = () => {
     {
       time: '23:30',
       title: 'Окончание вечера',
-      image: 'https://static.tildacdn.pro/tild3934-3630-4264-b962-373465343664/WhatsApp_Image_2025-.jpeg',
+      image: './last.jpg',
     },
   ];
 
