@@ -21,7 +21,7 @@ export default function HomePage() {
       <div className="h-[740px] relative">
         <img src="./main.jpg" alt="" />
         <div
-          className="absolute top-[243px] left-0 w-full h-[135px]
+          className="absolute top-[243px] left-0 w-full h-[145px]
           bg-gradient-to-b from-transparent via-[#fbfafb]/40 to-[#fbfafb]"
         />
         <div className="absolute top-[400px] left-0">
