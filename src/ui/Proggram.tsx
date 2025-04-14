@@ -11,22 +11,17 @@ export const Program = () => {
     {
       time: '17:30',
       title: 'Сбор гостей',
-      image: 'https://static.tildacdn.pro/tild3334-3830-4561-a265-303633666339/WhatsApp_Image_2025-.jpeg',
+      image: './one.jpg',
     },
-    // {
-    //   time: '17:30',
-    //   title: 'Беташар',
-    //   image: 'https://static.tildacdn.pro/tild3664-6138-4263-b965-666561386638/__5__2.jpeg',
-    // },
     {
       time: '18:00',
       title: 'Начало торжества',
-      image: 'https://static.tildacdn.pro/tild6432-3630-4662-a262-383932663536/WhatsApp_Image_2025-.jpeg',
+      image: './two.jpg',
     },
     {
       time: '21:00',
       title: 'Сладости вечера',
-      image: 'https://static.tildacdn.pro/tild6633-6434-4265-b565-343630646539/__6__2.jpeg',
+      image: './three.jpg',
     },
     {
       time: '23:30',

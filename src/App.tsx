@@ -7,6 +7,9 @@ import AddressBlock from './ui/AddressBlock';
 import WeddingCountdown from './ui/WeddingCountdown';
 import DressCodeBlock from './ui/DressCodeBlock';
 import RsvpForm from './ui/RsvpForm';
+import MusicButton from './ui/MusicButton';
+import InvitationBlock from './ui/InvitationBlock';
+import RespectBlock from './ui/RespectBlock';
 
 export default function ProgramTimeline() {
   useEffect(() => {
@@ -15,7 +18,7 @@ export default function ProgramTimeline() {
 
   return (
     <>
-    <div className='h-[725px]'>
+    <div className='h-[740px]'>
       <img src="https://optim.tildacdn.pro/tild3966-6136-4134-b965-336563616336/-/resize/922x/-/format/webp/d77add98a76bf550a95b.jpg"></img>
       <div className="absolute top-[302px] left-0 w-full h-[100px] bg-gradient-to-b from-transparent to-white" />
 
@@ -23,9 +26,11 @@ export default function ProgramTimeline() {
         <img src="./salogo.png" alt="" />
       </div>
     </div>
-      
+        <MusicButton />
+        <InvitationBlock />
         <WeddingCalendar />
         <WeddingCountdown />
+        <RespectBlock />
         <DressCodeBlock />
         <Program />
         <AddressBlock />

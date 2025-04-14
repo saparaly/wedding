@@ -2,16 +2,16 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 
-// Конфигурация из Firebase Console
 const firebaseConfig = {
-    apiKey: "AIzaSyAZeblGmLmchH5hFzE0-FiMmfKVIPOPpxw",
-    authDomain: "wedding-45ac1.firebaseapp.com",
-    projectId: "wedding-45ac1",
-    storageBucket: "wedding-45ac1.firebasestorage.app",
-    messagingSenderId: "421371677206",
-    appId: "1:421371677206:web:debc3a9a7b329b0f454337"
-};  
-
+    apiKey: "AIzaSyAregQ2iA9MaLoO3kuFs4UiUPGy8FUHeUo",
+    authDomain: "sandaweddinginvitations.firebaseapp.com",
+    projectId: "sandaweddinginvitations",
+    storageBucket: "sandaweddinginvitations.firebasestorage.app",
+    messagingSenderId: "701211383429",
+    appId: "1:701211383429:web:46b0c94b018932c7ebfbec"
+  };
+  
+    
 // Инициализация Firebase
 const app = initializeApp(firebaseConfig);
 // Инициализация Firestore

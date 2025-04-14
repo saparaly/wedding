@@ -29,11 +29,11 @@ export default function WeddingCalendar() {
         {matrix.map((week, wIndex) =>
           week.map((day, dIndex) => {
             if (!day) {
-              return <div key={`${wIndex}-${dIndex}`} className="py-1">&nbsp;</div>;
+              return <div key={`${wIndex}-${dIndex}`} className="py-1 h-11">&nbsp;</div>;
             }
             const isHighlighted = day === highlightDay;
             return (
-              <div key={`${wIndex}-${dIndex}`} className="py-1">
+              <div key={`${wIndex}-${dIndex}`} className="py-1 h-11">
                 {isHighlighted ? (
                   <div className="inline-block relative w-8 h-8 flex items-center justify-center">
                     <span className="absolute inset-0 flex items-center justify-center text-xs font-semibold z-10 text-[#fbfbfb]">
