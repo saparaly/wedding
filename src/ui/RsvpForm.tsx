@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Form, Input, Radio, Button } from 'antd';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from './firebase'; 

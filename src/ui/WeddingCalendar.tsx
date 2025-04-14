@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function WeddingCalendar() {
   const daysOfWeek = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС'];
   const matrix = [
