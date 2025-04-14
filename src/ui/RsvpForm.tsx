@@ -163,7 +163,7 @@ export default function RsvpForm() {
           <div className="text-center">
             <button
               type="submit"
-              className="px-6 py-2 bg-[#b3ac92] text-white rounded disabled:opacity-50"
+              className="px-6 py-2 bg-[#baac92] text-white rounded disabled:opacity-50"
               disabled={loading}
             >
               Отправить ответ

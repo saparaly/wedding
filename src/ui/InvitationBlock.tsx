@@ -1,6 +1,6 @@
 export default function InvitationBlock() {
   return (
-    <div className="relative max-w-md mx-auto p-8 bg-white">
+    <div className="relative max-w-md mx-auto p-8">
       <div
         className="absolute left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full animate-spin-slow pointer-events-none"
         style={{
