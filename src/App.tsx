@@ -20,7 +20,7 @@ export default function ProgramTimeline() {
       <div className="absolute top-[302px] left-0 w-full h-[100px] bg-gradient-to-b from-transparent to-white" />
 
       <div className='absolute top-[400px] left-0'>
-        <img src="/salogo.png" alt="" />
+        <img src="./salogo.png" alt="" />
       </div>
     </div>
       
