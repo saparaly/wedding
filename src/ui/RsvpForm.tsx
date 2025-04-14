@@ -1,6 +1,7 @@
 import { useState, useEffect, FormEvent } from 'react';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from './firebase';
+import { useTranslation } from 'react-i18next';
 
 type FeedbackType = { type: 'success' | 'error'; text: string } | null;
 
@@ -9,6 +10,7 @@ export default function RsvpForm() {
   const [attendance, setAttendance] = useState('');
   const [feedback, setFeedback] = useState<FeedbackType>(null);
   const [loading, setLoading] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (feedback) {
@@ -20,11 +22,11 @@ export default function RsvpForm() {
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (!fullname.trim()) {
-      setFeedback({ type: 'error', text: 'Пожалуйста, введите Ваше имя.' });
+      setFeedback({ type: 'error', text: t('rsvp_name_error') });
       return;
     }
     if (!attendance) {
-      setFeedback({ type: 'error', text: 'Укажите, придёте ли Вы.' });
+      setFeedback({ type: 'error', text: t('rsvp_attendance_error') });
       return;
     }
     setLoading(true);
@@ -34,12 +36,12 @@ export default function RsvpForm() {
         attendance,
         submittedAt: new Date(),
       });
-      setFeedback({ type: 'success', text: 'Ваш ответ успешно отправлен!' });
+      setFeedback({ type: 'success', text: t('rsvp_success') });
       setFullname('');
       setAttendance('');
     } catch (error) {
       console.error('Ошибка при отправке ответа:', error);
-      setFeedback({ type: 'error', text: 'Произошла ошибка. Повторите попытку позже.' });
+      setFeedback({ type: 'error', text: t('rsvp_error') });
     }
     setLoading(false);
   };
@@ -72,7 +74,7 @@ export default function RsvpForm() {
       <div className="relative w-full max-w-md bg-[#fbfbfb] p-6 rounded-md overflow-hidden">
         <div className="text-center mb-6 font-serif">
           <h1 className="text-2xl text-[#b3ac92] mb-4 italic">
-            Будем очень рады видеть вас!
+            {t('rsvp_title')}
           </h1>
 
           <div className="relative w-[250px] h-36 mx-auto overflow-hidden">
@@ -80,7 +82,6 @@ export default function RsvpForm() {
               src="https://optim.tildacdn.pro/tild6663-3137-4361-b135-663737366637/-/resize/724x/-/format/webp/Vector.png"
               alt="Ornament"
               className="absolute top-3 left-1 animate-spin-slow opacity-20"
-              // className="absolute top-0 left-1/2 animate-spin-slow opacity-20"
               style={{
                 width: '250px',
                 height: '250px',
@@ -90,7 +91,7 @@ export default function RsvpForm() {
           </div>
 
           <div className="text-base text-gray-800 mt-4">
-            Просим подтвердить своё присутствие на торжестве
+            {t('rsvp_subtitle')}
           </div>
         </div>
 
@@ -137,26 +138,26 @@ export default function RsvpForm() {
         <form onSubmit={onSubmit}>
           <div className="mb-4">
             <label htmlFor="fullname" className="block mb-2 font-medium text-gray-800">
-              ФИО
+              {t('rsvp_name_label')}
             </label>
             <input
               id="fullname"
               type="text"
               value={fullname}
               onChange={(e) => setFullname(e.target.value)}
-              placeholder="Ваше имя"
+              placeholder={t('rsvp_name_placeholder')}
               className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#b3ac92] text-gray-800"
             />
           </div>
 
           <div className="mb-4">
             <div className="block mb-2 font-medium text-gray-800">
-              Придёте/придёду на свадьбу?
+              {t('rsvp_attendance_label')}
             </div>
             <div className="flex flex-col space-y-2">
-              {renderRadioOption('yes', 'С удовольствием буду!')}
-              {renderRadioOption('couple', 'Приду/приеду с парой')}
-              {renderRadioOption('no', 'К сожалению, не смогу')}
+              {renderRadioOption('yes', t('rsvp_yes'))}
+              {renderRadioOption('couple', t('rsvp_couple'))}
+              {renderRadioOption('no', t('rsvp_no'))}
             </div>
           </div>
 
@@ -166,7 +167,7 @@ export default function RsvpForm() {
               className="px-6 py-2 bg-[#baac92] text-white rounded disabled:opacity-50"
               disabled={loading}
             >
-              Отправить ответ
+              {t('rsvp_submit')}
             </button>
           </div>
         </form>

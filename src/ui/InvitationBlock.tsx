@@ -1,4 +1,9 @@
+import { useTranslation } from 'react-i18next';
+
 export default function InvitationBlock() {
+  const { t, i18n } = useTranslation();
+  const isKazakh = i18n.language === 'kk';
+
   return (
     <div className="relative max-w-md mx-auto p-8">
       <div
@@ -12,18 +17,15 @@ export default function InvitationBlock() {
         }}
       />
       <div className="relative z-10 text-center font-serif text-gray-800">
-        <h1 className="text-3xl text-[#b3ac92] mb-4 font-bold">
-          Дорогие гости!
+        <h1
+          className={`text-2xl mb-4 font-bold whitespace-pre-line ${
+            isKazakh ? 'text-[#b3ac92]' : 'text-[#b3ac92]'
+          }`}
+        >
+          {t('invite_title')}
         </h1>
-        <p className="mb-4 ">
-          Приглашаем вас на свадебное торжество, посвящённое бракосочетанию наших детей.
-        </p>
-        <h2 className="text-2xl text-[#b3ac92] italic mb-4">
-          Санжар и Айгерим
-        </h2>
-        <p className="">
-          Будем рады разделить с вами этот счастливый для нас день! Просим присоединиться к празднику и украсить его своим присутствием!
-        </p>
+        <h2 className="text-2xl text-[#b3ac92] italic mb-4">{t('invite_names')}</h2>
+        <p className="whitespace-pre-line">{t('invite_message')}</p>
       </div>
     </div>
   );

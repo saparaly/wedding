@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { useTranslation } from 'react-i18next';
 
 export default function WeddingCountdown() {
+  const { t } = useTranslation();
+
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -52,24 +55,24 @@ export default function WeddingCountdown() {
 
       <div className="relative z-10 text-center text-white">
         <h2 className="text-2xl md:text-3xl mb-4 font-semibold">
-          До торжества осталось:
+          {t('countdown_title')}
         </h2>
         <div className="flex gap-6 md:gap-12 justify-center">
           <div>
             <span className="text-4xl md:text-5xl font-bold">{timeLeft.days}</span>
-            <div className="text-sm md:text-base font-light mt-1">ДНЕЙ</div>
+            <div className="text-sm md:text-base font-light mt-1">{t('countdown_days')}</div>
           </div>
           <div>
             <span className="text-4xl md:text-5xl font-bold">{timeLeft.hours}</span>
-            <div className="text-sm md:text-base font-light mt-1">ЧАСОВ</div>
+            <div className="text-sm md:text-base font-light mt-1">{t('countdown_hours')}</div>
           </div>
           <div>
             <span className="text-4xl md:text-5xl font-bold">{timeLeft.minutes}</span>
-            <div className="text-sm md:text-base font-light mt-1">МИНУТ</div>
+            <div className="text-sm md:text-base font-light mt-1">{t('countdown_minutes')}</div>
           </div>
           <div>
             <span className="text-4xl md:text-5xl font-bold">{timeLeft.seconds}</span>
-            <div className="text-sm md:text-base font-light mt-1">СЕКУНД</div>
+            <div className="text-sm md:text-base font-light mt-1">{t('countdown_seconds')}</div>
           </div>
         </div>
       </div>

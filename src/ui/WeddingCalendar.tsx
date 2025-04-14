@@ -1,5 +1,9 @@
+import { useTranslation } from 'react-i18next';
+
 export default function WeddingCalendar() {
-  const daysOfWeek = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС'];
+  const { t } = useTranslation();
+
+  const daysOfWeek = t('calendar_days', { returnObjects: true }) as string[];
   const matrix = [
     [null, null, null, null, 1, 2, 3],
     [4, 5, 6, 7, 8, 9, 10],
@@ -12,13 +16,13 @@ export default function WeddingCalendar() {
   return (
     <div className="flex flex-col items-center bg-[#fbfbfb] text-black p-4 rounded-md w-full max-w-sm mx-auto shadow-lg">
       <h2 className="text-xl font-bold mb-2 text-center">
-        Торжество состоится
+        {t('calendar_title')}
       </h2>
       <p className="text-center text-lg mb-4 text-[#b3ac92]">
-        9 августа 2025 года, в 18:00
+        {t('calendar_date')}
       </p>
       <h3 className="text-lg uppercase tracking-widest font-semibold mb-4">
-        Август 2025
+        {t('calendar_month')}
       </h3>
       <div className="grid grid-cols-7 gap-1 text-center text-xs w-full">
         {daysOfWeek.map(day => (

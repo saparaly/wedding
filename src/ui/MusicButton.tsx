@@ -1,35 +1,54 @@
 import { useState, useRef, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export default function MusicButton() {
   const [playing, setPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const { i18n } = useTranslation();
+
+  const isKazakh = i18n.language === 'kk';
+  const kazUrl = 'https://dl.dropbox.com/scl/fi/u98rz0v1vk88qjw3lf3ma/mdee-toi-zyry-cover-mdos-mucasan_kQhAnJWD.mp3?rlkey=ti99jldmqdqfv9zucyzd9qtpk&st=1vhjq69r&dl=0';
+  const rusUrl = './music.mp3';
 
   useEffect(() => {
     if (!audioRef.current) {
-      audioRef.current = new Audio('./music.mp3');
-      audioRef.current.addEventListener('loadedmetadata', () => {
-        if (audioRef.current && audioRef.current.currentTime < 78) {
-          audioRef.current.currentTime = 78;
-        }
-      });
+      audioRef.current = new Audio(isKazakh ? kazUrl : rusUrl);
+
+      if (!isKazakh) {
+        audioRef.current.addEventListener('loadedmetadata', () => {
+          if (audioRef.current && audioRef.current.currentTime < 78) {
+            audioRef.current.currentTime = 78;
+          }
+        });
+      }
     }
+
     if (playing) {
-      if (audioRef.current.currentTime < 78) {
+      if (!isKazakh && audioRef.current && audioRef.current.currentTime < 78) {
         audioRef.current.currentTime = 78;
       }
-      audioRef.current.play();
+      audioRef.current?.play();
     } else {
-      audioRef.current.pause();
+      audioRef.current?.pause();
     }
-  }, [playing]);
+  }, [playing, isKazakh]);
 
   const togglePlay = () => {
-    if (!playing && audioRef.current) {
+    if (!playing && audioRef.current && !isKazakh) {
       audioRef.current.currentTime = 78;
     }
     setPlaying((prev) => !prev);
   };
 
+  useEffect(() => {
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+      }
+    };
+  }, []);
+  
   return (
     <div className="flex items-center justify-center pt-10">
       <button
