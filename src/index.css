@@ -1,9 +1,10 @@
 @import "tailwindcss";
 /* @import 'antd/dist/antd.css'; */
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Noto Sans', sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -11,7 +12,7 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #fff;
   min-width: 300px;
-  max-width: 400px;
+  max-width: 500px;
   margin: 0 auto;
 
   background: #fbfbfb;

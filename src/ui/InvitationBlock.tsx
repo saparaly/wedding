@@ -5,7 +5,7 @@ export default function InvitationBlock() {
   const isKazakh = i18n.language === 'kk';
 
   return (
-    <div className="relative max-w-md mx-auto p-8">
+    <div className="relative mx-auto p-3">
       <div
         className="absolute left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full animate-spin-slow pointer-events-none"
         style={{
