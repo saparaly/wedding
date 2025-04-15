@@ -23,10 +23,19 @@ export default function InvitationBlock() {
           }`}
         >
           {t('invite_title')}
+          {isKazakh && <><br /><br /> Сіздерді балаларымыз</>}
         </h1>
+        {isKazakh ? 
+        <>
+                <h2 className="text-2xl text-[#b3ac92] italic my-4">{t('invite_names')}</h2>
+                <p>{t('invite_text')}</p></> 
+                :
+                <>
         <p>{t('invite_text')}</p>
         <h2 className="text-2xl text-[#b3ac92] italic my-4">{t('invite_names')}</h2>
         <p className="whitespace-pre-line">{t('invite_message')}</p>
+                </>
+        }
       </div>
     </div>
   );
