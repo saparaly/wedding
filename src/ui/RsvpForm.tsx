@@ -8,9 +8,9 @@ type FeedbackType = { type: 'success' | 'error'; text: string } | null;
 export default function RsvpForm() {
   const [fullname, setFullname] = useState('');
   const [attendance, setAttendance] = useState('');
-  const [feedback, setFeedback] = useState<FeedbackType>(null);
   const [loading, setLoading] = useState(false);
   const { t } = useTranslation();
+  const [feedback, setFeedback] = useState<FeedbackType>();
 
   useEffect(() => {
     if (feedback) {
@@ -49,7 +49,7 @@ export default function RsvpForm() {
   const renderRadioOption = (value: string, labelText: string) => {
     const isChecked = attendance === value;
     return (
-      <label className="flex items-center text-gray-800 cursor-pointer">
+      <label className="flex items-center text-[#52503f] cursor-pointer">
         <input
           type="radio"
           name="attendance"
@@ -90,9 +90,9 @@ export default function RsvpForm() {
             />
           </div>
 
-          <div className="text-base text-gray-800 mt-4">
+          <h2 className="text-xl text-[#52503f] mt-4">
             {t('rsvp_subtitle')}
-          </div>
+          </h2>
         </div>
 
         {feedback && (
@@ -101,7 +101,7 @@ export default function RsvpForm() {
               absolute bottom-4 right-4 p-4 border-l-4 rounded shadow transition-transform duration-300
               ${
                 feedback.type === 'success'
-                  ? 'border-green-500 bg-green-100 text-green-700'
+                  ? 'border-[#52503f] bg-[#e6e2d2] text-[#52503f]'
                   : 'border-red-500 bg-red-100 text-red-700'
               }
             `}
@@ -137,7 +137,7 @@ export default function RsvpForm() {
 
         <form onSubmit={onSubmit}>
           <div className="mb-4">
-            <label htmlFor="fullname" className="block mb-2 font-medium text-gray-800">
+            <label htmlFor="fullname" className="block mb-2 font-medium text-[#52503f]">
               {t('rsvp_name_label')}
             </label>
             <input
@@ -146,17 +146,16 @@ export default function RsvpForm() {
               value={fullname}
               onChange={(e) => setFullname(e.target.value)}
               placeholder={t('rsvp_name_placeholder')}
-              className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#b3ac92] text-gray-800"
+              className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#b3ac92] text-[#52503f]"
             />
           </div>
 
           <div className="mb-4">
-            <div className="block mb-2 font-medium text-gray-800">
+            <div className="block mb-2 font-medium text-[#52503f]">
               {t('rsvp_attendance_label')}
             </div>
             <div className="flex flex-col space-y-2">
               {renderRadioOption('yes', t('rsvp_yes'))}
-              {renderRadioOption('couple', t('rsvp_couple'))}
               {renderRadioOption('no', t('rsvp_no'))}
             </div>
           </div>

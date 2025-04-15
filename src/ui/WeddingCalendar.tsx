@@ -15,7 +15,7 @@ export default function WeddingCalendar() {
 
   return (
     <div className="flex flex-col items-center bg-[#fbfbfb] text-black p-4 rounded-md w-full max-w-sm mx-auto shadow-lg">
-      <h2 className="text-xl font-bold mb-2 text-center">
+      <h2 className="text-xl font-bold mb-2 text-center text-[#52503f]">
         {t('calendar_title')}
       </h2>
       <p className="text-center text-lg mb-4 text-[#b3ac92]">

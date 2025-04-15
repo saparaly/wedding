@@ -24,7 +24,8 @@ export default function InvitationBlock() {
         >
           {t('invite_title')}
         </h1>
-        <h2 className="text-2xl text-[#b3ac92] italic mb-4">{t('invite_names')}</h2>
+        <p>{t('invite_text')}</p>
+        <h2 className="text-2xl text-[#b3ac92] italic my-4">{t('invite_names')}</h2>
         <p className="whitespace-pre-line">{t('invite_message')}</p>
       </div>
     </div>

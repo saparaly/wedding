@@ -15,7 +15,7 @@ export default function AddressBlock() {
       className="flex flex-col items-center bg-[#fbfbfb] text-black p-4 rounded-md w-full max-w-sm mx-auto"
       data-aos="fade-up"
     >
-      <h2 className="text-xl font-bold mb-2 text-center">{t('address_title')}</h2>
+      <h2 className="text-xl text-[#52503f] font-bold mb-2 text-center">{t('address_title')}</h2>
 
       <p className="text-center text-lg mb-4 text-[#b3ac92] whitespace-pre-line">
         {t('address_location')}

@@ -11,7 +11,6 @@ export const Program = () => {
   }, []);
 
   const steps = t('program', { returnObjects: true }) as { time: string; title: string }[];
-
   const images = ['./one.jpg', './two.jpg', './three.jpg', './last.jpg'];
 
   return (
@@ -33,24 +32,45 @@ export const Program = () => {
               data-aos="fade-up"
               data-aos-delay={idx * 100}
             >
-              <div className={`w-1/2 p-4 flex ${isLeft ? 'justify-end' : 'justify-start'}`}>
-                <div className={`${isLeft ? 'text-right' : 'text-left'}`}>
-                  <div className="text-lg font-bold text-gray-700">{step.time}</div>
-                  <div className="text-sm text-gray-600">{step.title}</div>
-                </div>
-              </div>
-
-              <div className="w-4 h-4 bg-gray-500 rounded-full z-10 mt-1 mx-2" data-aos="zoom-in" />
-
-              <div className={`w-1/2 p-4 flex ${isLeft ? 'justify-start' : 'justify-end'}`}>
-                <img
-                  src={images[idx]}
-                  alt={step.title}
-                  className="w-16 h-16 object-cover rounded-full border border-gray-300"
-                  data-aos="flip-left"
-                  data-aos-delay={idx * 150}
-                />
-              </div>
+              {isLeft ? (
+                <>
+                  <div className="w-1/2 p-4 flex justify-end">
+                    <div className="text-center">
+                      <div className="text-xl font-bold text-gray-800">{step.time}</div>
+                      <div className="text-base text-gray-700">{step.title}</div>
+                    </div>
+                  </div>
+                  <div className="w-4 h-4 bg-gray-600 rounded-full z-10 mt-1 mx-2" data-aos="zoom-in" />
+                  <div className="w-1/2 p-4 flex justify-start">
+                    <img
+                      src={images[idx]}
+                      alt={step.title}
+                      className="w-20 h-20 object-cover rounded-full border border-gray-300"
+                      data-aos="flip-left"
+                      data-aos-delay={idx * 150}
+                    />
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="w-1/2 p-4 flex justify-end">
+                    <img
+                      src={images[idx]}
+                      alt={step.title}
+                      className="w-20 h-20 object-cover rounded-full border border-gray-300"
+                      data-aos="flip-left"
+                      data-aos-delay={idx * 150}
+                    />
+                  </div>
+                  <div className="w-4 h-4 bg-gray-600 rounded-full z-10 mt-1 mx-2" data-aos="zoom-in" />
+                  <div className="w-1/2 p-4 flex justify-start">
+                    <div className="text-center">
+                      <div className="text-xl font-bold text-gray-800">{step.time}</div>
+                      <div className="text-base text-gray-700">{step.title}</div>
+                    </div>
+                  </div>
+                </>
+              )}
             </div>
           );
         })}

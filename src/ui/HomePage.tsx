@@ -19,13 +19,13 @@ export default function HomePage() {
   return (
     <>
       <div className="h-[740px] relative">
-        <img src="./main.jpg" alt="" />
+        <img src="./main.jpg" className='h-[377px]' alt="" />
         <div
-          className="absolute top-[243px] left-0 w-full h-[145px]
+          className="absolute top-[238px] left-0 w-full h-[140px]
           bg-gradient-to-b from-transparent via-[#fbfafb]/40 to-[#fbfafb]"
         />
         <div className="absolute top-[400px] left-0">
-          <img src={logo} alt="logo" />
+          <img src={logo} alt="logo" className='h-[336px]' />
         </div>
       </div>
 
