@@ -33,7 +33,7 @@ export default function LangSelect() {
           Дорогие гости!
         </h2>
         <p className="text-gray-700 mb-4 leading-relaxed">
-          Для просмотра приглашение на русском языке нажмите на ссылку ниже:
+          Для просмотра приглашения на русском языке нажмите на ссылку ниже:
         </p>
         <button
           className="block w-full py-2 px-4 bg-[#b3ac92] text-white rounded"
